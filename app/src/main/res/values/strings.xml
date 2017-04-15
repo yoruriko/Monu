@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Monu</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="action_scan">Scan</string>
+
+    <string name="nav_recommend">Recommends</string>
+    <string name="nav_liked">Liked</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_usage_and_terms">Usage &amp; terms</string>
+    <string name="nav_support_and_help">Support &amp; help</string>
+</resources>

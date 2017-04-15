@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FC5002</color>
+    <color name="colorPrimaryDark">#A6421A</color>
+    <color name="colorAccent">#E3A32D</color>
+
+    <color name="background_color">#FC5002</color>
+    <color name="background_dark">#A6421A</color>
+    <color name="background_light">#E3A32D</color>
+
+    <color name="font_color">#46433c</color>
+    <color name="font_dark">#191817</color>
+    <color name="font_light">#b6b1a9</color>
+</resources>
