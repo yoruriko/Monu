@@ -24,6 +24,16 @@
     <string name="clear_search_history">Clear Search History</string>
     <string name="licenses">Licences</string>
 
+    <string name="scan_hint">Align QR Code within the frame to scan.</string>
+    <string name="request_scan_hint">Scan QR Code requires Camera permission.</string>
+    <string name="request_scan_fail_message">Can not open QR Code Scanner without permissions.</string>
+    <string name="request">Request</string>
+
+    <string name="search_hint">What do you want to find?</string>
+    <string name="recent">Recent:</string>
+    <string name="nearby">Nearby</string>
+    <string name="authentic">Authentic</string>
+    <string name="trending">Trending</string>
 
     <string name="en_us">English, US</string>
 </resources>
