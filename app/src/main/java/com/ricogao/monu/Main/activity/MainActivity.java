@@ -1,5 +1,6 @@
 package com.ricogao.monu.Main.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -76,6 +77,8 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_history:
                 break;
             case R.id.nav_settings:
+                Intent it = new Intent(this, SettingActivity.class);
+                startActivity(it);
                 break;
             case R.id.nav_usage_and_terms:
                 break;

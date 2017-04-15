@@ -8,6 +8,9 @@
 
     <dimen name="logo_size">50dp</dimen>
 
+    <dimen name="margin_normal">15dp</dimen>
+    <dimen name="padding_normal">15dp</dimen>
+    <dimen name="padding_small">10dp</dimen>
 
     <dimen name="app_bar_font_size">20sp</dimen>
 </resources>
