@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.ricogao.monu.Main.fragments.MainFragment;
 import com.ricogao.monu.R;
 
 import java.util.List;
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity
     private static final int REQUEST_CODE_QRCODE_PERMISSIONS = 1;
 
     private final static String[] perms = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+    private Fragment mainFragment;
 
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
@@ -60,6 +64,13 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        init();
+    }
+
+    private void init() {
+        mainFragment = new MainFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, mainFragment).commit();
     }
 
     @Override

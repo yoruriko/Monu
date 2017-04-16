@@ -41,5 +41,5 @@ dependencies {
     compile 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
 
     compile 'pub.devrel:easypermissions:0.1.7'
-
+    compile 'com.bigkoo:convenientbanner:2.0.5'
 }
