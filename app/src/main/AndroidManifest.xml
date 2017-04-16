@@ -35,7 +35,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Main.activity.SearchActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

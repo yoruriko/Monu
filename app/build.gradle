@@ -42,5 +42,4 @@ dependencies {
 
     compile 'pub.devrel:easypermissions:0.1.7'
 
-
 }
