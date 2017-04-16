@@ -17,6 +17,13 @@
         android:background="@color/divider_color" />
 
     <include layout="@layout/filter_panel" />
+
+    <com.ricogao.monu.Main.widget.BounceBallView
+        android:id="@+id/bounce_view"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:visibility="gone" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

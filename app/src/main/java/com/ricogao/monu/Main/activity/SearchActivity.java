@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ricogao.monu.Main.widget.BounceBallView;
 import com.ricogao.monu.R;
 
 import butterknife.BindView;
@@ -47,6 +48,9 @@ public class SearchActivity extends AppCompatActivity {
     LinearLayout btnAuthentic;
     @BindView(R.id.btn_trending)
     LinearLayout btnTrending;
+
+    @BindView(R.id.bounce_view)
+    BounceBallView ballView;
 
 
     @OnClick({R.id.btn_nearby, R.id.btn_authentic, R.id.btn_trending})
@@ -84,6 +88,7 @@ public class SearchActivity extends AppCompatActivity {
         loadRecent();
     }
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,12 +117,36 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void performSearch() {
+        startLoadingAnim();
         hideKeyboard();
+        hidePanel();
     }
 
     private void clearSearch() {
+        stopLoadingAnim();
         edtSearch.setText("");
         hideKeyboard();
+        showPanel();
+    }
+
+    private void startLoadingAnim() {
+        if (!ballView.isShown()) {
+            ballView.setVisibility(View.VISIBLE);
+        }
+
+        if (!ballView.isAnimating()) {
+            ballView.startAnim();
+        }
+    }
+
+    private void stopLoadingAnim() {
+        if (ballView.isShown()) {
+            ballView.setVisibility(View.GONE);
+        }
+
+        if (ballView.isAnimating()) {
+            ballView.stopAnim();
+        }
     }
 
     private void loadRecent() {
@@ -152,8 +181,6 @@ public class SearchActivity extends AppCompatActivity {
         edtSearch.clearFocus();
         InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         in.hideSoftInputFromWindow(edtSearch.getWindowToken(), 0);
-
-        hidePanel();
     }
 
 
