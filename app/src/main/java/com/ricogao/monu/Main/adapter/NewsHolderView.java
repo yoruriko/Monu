@@ -28,8 +28,7 @@ public class NewsHolderView implements Holder<NewsItem> {
 
     @Override
     public View createView(Context context) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.news_item_layout, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.news_item_layout, null);
         ButterKnife.bind(this, view);
         return view;
     }

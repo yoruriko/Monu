@@ -16,5 +16,9 @@
     <dimen name="app_bar_font_size">20sp</dimen>
     <dimen name="banner_title_font_size">16sp</dimen>
     <dimen name="banner_subtitle_font_size">12sp</dimen>
+
+    <dimen name="card_elevation">6dp</dimen>
     <dimen name="banner_size">200dp</dimen>
+    <dimen name="card_size">250dp</dimen>
+    <dimen name="card_conner_radius">5dp</dimen>
 </resources>

@@ -36,6 +36,8 @@
     <string name="trending">Trending</string>
 
     <string name="searching">Searching . . .</string>
+    <string name="likes">likes</string>
+    <string name="trending_now">Trending now</string>
 
     <string name="en_us">English, US</string>
 </resources>
