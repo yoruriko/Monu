@@ -20,5 +20,6 @@
     <dimen name="card_elevation">6dp</dimen>
     <dimen name="banner_size">200dp</dimen>
     <dimen name="card_size">250dp</dimen>
+    <dimen name="search_item_size">120dp</dimen>
     <dimen name="card_conner_radius">5dp</dimen>
 </resources>

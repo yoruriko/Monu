@@ -62,7 +62,7 @@ public class RecommendItemAdapter extends RecyclerView.Adapter<RecyclerView.View
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.banner_layout, parent, false);
             return new NewsItemHolder(view);
         } else {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_recommend_layout, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recommend_item_layout, parent, false);
             return new RecommendItemHolder(view);
         }
 

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -14,8 +16,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ricogao.monu.Main.adapter.SearchItemAdatper;
+import com.ricogao.monu.Main.model.SearchItem;
 import com.ricogao.monu.Main.widget.BounceBallView;
 import com.ricogao.monu.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,13 +32,16 @@ import butterknife.OnClick;
  * Created by ricogao on 2017/4/15.
  */
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements SearchItemAdatper.OnSearchItemClickListener {
 
     private final static String TAG = SearchActivity.class.getSimpleName();
 
     private final int TYPE_NEARBY = 1;
     private final int TYPE_AUTHENTIC = 2;
     private final int TYPE_TRENDING = 3;
+
+    private SearchItemAdatper adatper;
+    private List<SearchItem> list;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -51,6 +61,9 @@ public class SearchActivity extends AppCompatActivity {
 
     @BindView(R.id.bounce_view)
     BounceBallView ballView;
+
+    @BindView(R.id.recycler_view)
+    RecyclerView recyclerView;
 
 
     @OnClick({R.id.btn_nearby, R.id.btn_authentic, R.id.btn_trending})
@@ -107,7 +120,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (i == EditorInfo.IME_ACTION_SEARCH) {
-                    performSearch();
+                    performSearch(edtSearch.getText().toString());
                     return true;
                 }
 
@@ -116,17 +129,55 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-    private void performSearch() {
+    private void performSearch(String key) {
         startLoadingAnim();
+        recyclerView.setVisibility(View.VISIBLE);
         hideKeyboard();
         hidePanel();
+        showSearchResult(key);
     }
 
     private void clearSearch() {
+
         stopLoadingAnim();
+
         edtSearch.setText("");
+        recyclerView.setVisibility(View.INVISIBLE);
         hideKeyboard();
         showPanel();
+    }
+
+    private void showSearchResult(String key) {
+
+
+        if (key.equals("sushi")) {
+            list = new ArrayList<>();
+            SearchItem item = new SearchItem();
+            item.setName("Yamamoto");
+            item.setKeywords("Traditional Japanese dish, Sushi");
+            item.setDistance(21);
+            item.setLikes(102);
+            item.setSeats(22);
+            item.setAvgCost(38.5f);
+            item.setId(12);
+            item.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/6b/2a/81/6b2a81e2466cca6db0d4d9ec8b328eaa.jpg");
+
+            list.add(item);
+            list.add(item);
+            list.add(item);
+        } else {
+            list = new ArrayList<>();
+        }
+
+        if (adatper == null) {
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setHasFixedSize(true);
+            adatper = new SearchItemAdatper(this, list);
+            recyclerView.setAdapter(adatper);
+        } else {
+            adatper.setList(list);
+            adatper.notifyDataSetChanged();
+        }
     }
 
     private void startLoadingAnim() {
@@ -191,5 +242,10 @@ public class SearchActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSearchItemClick(long id) {
+
     }
 }

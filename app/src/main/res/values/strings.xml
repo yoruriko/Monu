@@ -36,8 +36,13 @@
     <string name="trending">Trending</string>
 
     <string name="searching">Searching . . .</string>
-    <string name="likes">likes</string>
+    <string name="likes">Likes</string>
     <string name="trending_now">Trending now</string>
+    <string name="distance">Distance</string>
+    <string name="seats">Seats</string>
+    <string name="average_cost">Average Cost</string>
+    <string name="no_result_message">We have searched more than 500 restaurants, We did not found any result for your search.</string>
+    <string name="no_result_found">No result found</string>
 
     <string name="en_us">English, US</string>
 </resources>
