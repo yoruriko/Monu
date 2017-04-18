@@ -25,11 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Main.activity.SettingActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Main.activity.ScanActivity"
             android:screenOrientation="portrait" />
@@ -37,6 +35,10 @@
             android:name=".Main.activity.SearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main.activity.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

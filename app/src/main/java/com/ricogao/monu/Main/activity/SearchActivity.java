@@ -1,6 +1,7 @@
 package com.ricogao.monu.Main.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -188,6 +189,7 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setHasFixedSize(true);
             adatper = new SearchItemAdatper(this, list);
+            adatper.setListener(this);
             recyclerView.setAdapter(adatper);
         } else {
             adatper.setList(list);
@@ -263,6 +265,7 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
 
     @Override
     public void onSearchItemClick(long id) {
-
+        Intent it = new Intent(this, DetailActivity.class);
+        startActivity(it);
     }
 }

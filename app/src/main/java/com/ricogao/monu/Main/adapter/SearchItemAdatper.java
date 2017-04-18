@@ -47,6 +47,10 @@ public class SearchItemAdatper extends RecyclerView.Adapter<RecyclerView.ViewHol
         void onSearchItemClick(long id);
     }
 
+    public void setListener(OnSearchItemClickListener listener) {
+        this.listener = listener;
+    }
+
     class SearchItemViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.card_view)
         CardView cardView;
