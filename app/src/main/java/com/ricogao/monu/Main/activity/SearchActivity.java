@@ -2,6 +2,8 @@ package com.ricogao.monu.Main.activity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -36,12 +38,26 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
 
     private final static String TAG = SearchActivity.class.getSimpleName();
 
+    private final int SEARCH_FINISH = 123;
+
     private final int TYPE_NEARBY = 1;
     private final int TYPE_AUTHENTIC = 2;
     private final int TYPE_TRENDING = 3;
 
     private SearchItemAdatper adatper;
     private List<SearchItem> list;
+
+    private Handler mHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == SEARCH_FINISH) {
+                stopLoadingAnim();
+                showSearchResult((String) msg.obj);
+            }
+            super.handleMessage(msg);
+        }
+    };
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -131,10 +147,10 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
 
     private void performSearch(String key) {
         startLoadingAnim();
-        recyclerView.setVisibility(View.VISIBLE);
+
+        mHandler.sendMessageDelayed(mHandler.obtainMessage(SEARCH_FINISH, key), 3000);
         hideKeyboard();
         hidePanel();
-        showSearchResult(key);
     }
 
     private void clearSearch() {
@@ -148,7 +164,6 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
     }
 
     private void showSearchResult(String key) {
-
 
         if (key.equals("sushi")) {
             list = new ArrayList<>();
@@ -178,6 +193,8 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
             adatper.setList(list);
             adatper.notifyDataSetChanged();
         }
+
+        recyclerView.setVisibility(View.VISIBLE);
     }
 
     private void startLoadingAnim() {
