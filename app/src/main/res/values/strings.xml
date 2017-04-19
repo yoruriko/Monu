@@ -8,6 +8,8 @@
     <string name="action_search">Search</string>
     <string name="action_scan">Scan</string>
 
+    <string name="scan_qr_code">Scan QR Code</string>
+
     <string name="nav_recommend">Recommends</string>
     <string name="nav_liked">Liked</string>
     <string name="nav_history">History</string>
@@ -51,7 +53,16 @@
     <string name="booking_condition">Booking Condition</string>
     <string name="seats_available">seats available</string>
 
+    <string name="main">Main</string>
+    <string name="sides">Sides</string>
+    <string name="dessert">Dessert</string>
+    <string name="drink">Drink</string>
+
+    <string name="menu">Menu</string>
+
     <string name="en_us">English, US</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
 
 </resources>

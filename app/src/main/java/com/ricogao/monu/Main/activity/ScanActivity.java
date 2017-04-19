@@ -30,7 +30,7 @@ public class ScanActivity extends AppCompatActivity implements QRCodeView.Delega
 
         ButterKnife.bind(this);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Scan QR Code");
+            getSupportActionBar().setTitle(R.string.scan_qr_code);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
