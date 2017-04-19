@@ -4,21 +4,30 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.widget.TextView;
 
+import com.ricogao.monu.Main.adapter.MenuItemAdapter;
 import com.ricogao.monu.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MenuActivity extends AppCompatActivity {
-
-    @BindView(R.id.message)
-    TextView mTextMessage;
+public class MenuActivity extends AppCompatActivity implements MenuItemAdapter.OnMenuItemClickListener {
 
     @BindView(R.id.navigation)
     BottomNavigationView navigation;
+
+    @BindView(R.id.recycler_view)
+    RecyclerView recycler;
+
+    private MenuItemAdapter adapter;
+
+    private List<com.ricogao.monu.Main.model.MenuItem> list;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -27,16 +36,12 @@ public class MenuActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_main:
-                    mTextMessage.setText(R.string.main);
                     return true;
                 case R.id.navigation_sides:
-                    mTextMessage.setText(R.string.sides);
                     return true;
                 case R.id.navigation_dessert:
-                    mTextMessage.setText(R.string.dessert);
                     return true;
                 case R.id.navigation_drink:
-                    mTextMessage.setText(R.string.drink);
                     return true;
             }
             return false;
@@ -57,6 +62,35 @@ public class MenuActivity extends AppCompatActivity {
         }
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        init();
+    }
+
+    private void init() {
+
+        if (adapter == null) {
+            list = new ArrayList<>();
+
+            com.ricogao.monu.Main.model.MenuItem item = new com.ricogao.monu.Main.model.MenuItem();
+            item.setId(11);
+            item.setName("Inari Sushi");
+            item.setImgSrc("http://www.allaboutsushiguide.com/images/inari-sushi-1.jpg");
+            item.setVeg(true);
+
+            list.add(item);
+            list.add(item);
+            list.add(item);
+            list.add(item);
+            list.add(item);
+            list.add(item);
+
+            adapter = new MenuItemAdapter(this, list);
+            adapter.setListener(this);
+            recycler.setLayoutManager(new GridLayoutManager(this, 2));
+            recycler.setHasFixedSize(true);
+            recycler.setAdapter(adapter);
+        } else {
+            adapter.notifyDataSetChanged();
+        }
     }
 
     @Override
@@ -66,5 +100,10 @@ public class MenuActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onMenuItemClick(long id) {
+
     }
 }
