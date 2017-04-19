@@ -8,10 +8,216 @@
     tools:context="com.ricogao.monu.Main.activity.DetailActivity"
     tools:showIn="@layout/activity_detail">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_extra_small"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/img_location"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:src="@drawable/ic_location"
+                android:tint="@color/background_light" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/img_location"
+                android:text="123 Example Street, Example Town, Example City"
+                android:textColor="@color/font_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_location"
+                android:layout_toEndOf="@id/img_location"
+                android:text="12km away" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="50dp"
+            android:background="@color/divider_color" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_extra_small"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal">
+
+            <ImageView
+                android:id="@+id/img_phone"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:src="@drawable/ic_phone"
+                android:tint="@color/background_light" />
+
+            <TextView
+                android:id="@+id/tv_phone1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/img_phone"
+                android:text="(456)11234 - 3242"
+                android:textColor="@color/font_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_contact1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_phone1"
+                android:layout_toEndOf="@id/img_phone"
+                android:text="@string/contact_1" />
+
+            <TextView
+                android:id="@+id/tv_phone2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_contact1"
+                android:layout_marginTop="@dimen/margin_extra_small"
+                android:layout_toEndOf="@id/img_phone"
+                android:text="(456)12312 - 2569"
+                android:textColor="@color/font_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_contact2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_phone2"
+                android:layout_toEndOf="@id/img_phone"
+                android:text="@string/contact_2" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="50dp"
+            android:background="@color/divider_color" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_extra_small"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal">
+
+            <ImageView
+                android:id="@+id/img_opentime"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:src="@drawable/ic_opentime"
+                android:tint="@color/background_light" />
+
+            <TextView
+                android:id="@+id/tv_opentime1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/img_opentime"
+                android:text="9 a.m. - 10 p.m."
+                android:textColor="@color/font_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_opentime_title1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_opentime1"
+                android:layout_toEndOf="@id/img_opentime"
+                android:text="@string/mon_to_fri" />
+
+            \
+
+            <TextView
+                android:id="@+id/tv_opentime2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_opentime_title1"
+                android:layout_marginTop="@dimen/margin_extra_small"
+                android:layout_toEndOf="@id/img_opentime"
+                android:text="9 a.m. - 12 p.m."
+                android:textColor="@color/font_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_opentime_title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_opentime2"
+                android:layout_toEndOf="@id/img_opentime"
+                android:text="@string/contact_2" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="50dp"
+            android:background="@color/divider_color" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_extra_small"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal">
+
+            <ImageView
+                android:id="@+id/img_seats"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:src="@drawable/ic_location"
+                android:tint="@color/background_light" />
+
+            <TextView
+                android:id="@+id/tv_seats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/img_seats"
+                android:text="24"
+                android:textColor="@color/font_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_extra_small"
+                android:layout_toEndOf="@id/tv_seats"
+                android:text="@string/seats_available"
+                android:textColor="@color/font_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_seats_condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_seats"
+                android:layout_toEndOf="@id/img_seats"
+                android:text="@string/booking_condition" />
+        </RelativeLayout>
+    </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

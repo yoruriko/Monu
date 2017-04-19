@@ -34,6 +34,22 @@ public class DetailActivity extends AppCompatActivity {
     @BindView(R.id.btn_liked)
     Button btnLiked;
 
+    @BindView(R.id.tv_location)
+    TextView tvLocation;
+
+    @BindView(R.id.tv_phone1)
+    TextView tvPhone1;
+    @BindView(R.id.tv_phone2)
+    TextView tvPhone2;
+
+    @BindView(R.id.tv_opentime1)
+    TextView tvWorkHour1;
+    @BindView(R.id.tv_opentime2)
+    TextView tvWorkHour2;
+
+    @BindView(R.id.tv_seats)
+    TextView tvSeats;
+
     @OnClick(R.id.btn_liked)
     void onLickClick(Button button) {
         if (button.isSelected()) {
@@ -73,6 +89,13 @@ public class DetailActivity extends AppCompatActivity {
         item.setName("Yamamoto");
         item.setInfo("Sushi bar,Ealing Broadway,London");
         item.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/6b/2a/81/6b2a81e2466cca6db0d4d9ec8b328eaa.jpg");
+        item.setAddress("No. 109, Ealing broadway, London");
+        item.setPhone1("(+44) 5201 203 123");
+        item.setPhone2("(+44) 5201 122 959");
+        item.setWorkHour1("9 a.m. - 10 p.m.");
+        item.setWorkHour2("10 a.m. - 12 p.m.");
+        item.setDistance("18 km away");
+        item.setSeatsState(18);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(item.getName());
@@ -81,6 +104,12 @@ public class DetailActivity extends AppCompatActivity {
         tvInfo.setText(item.getInfo());
         btnLiked.setText(item.getLikes() + " Likes");
         btnLiked.setSelected(item.isLiked());
+        tvLocation.setText(item.getAddress());
+        tvPhone1.setText(item.getPhone1());
+        tvPhone2.setText(item.getPhone2());
+        tvWorkHour1.setText(item.getWorkHour1());
+        tvWorkHour2.setText(item.getWorkHour2());
+        tvSeats.setText(item.getSeatsState() + "");
 
         Picasso.with(this)
                 .load(item.getImgSrc())

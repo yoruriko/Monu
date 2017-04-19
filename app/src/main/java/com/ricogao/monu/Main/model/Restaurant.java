@@ -16,6 +16,7 @@ public class Restaurant {
     String phone2;
     String workHour1;
     String workHour2;
+    String distance;
     int seatsState;
 
     public Restaurant() {
@@ -115,5 +116,13 @@ public class Restaurant {
 
     public void setSeatsState(int seatsState) {
         this.seatsState = seatsState;
+    }
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
     }
 }
