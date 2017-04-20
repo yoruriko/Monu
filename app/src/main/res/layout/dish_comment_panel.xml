@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_extra_small"
+    android:layout_marginEnd="@dimen/margin_extra_small"
+    android:layout_marginStart="@dimen/margin_extra_small"
+    android:layout_marginTop="@dimen/margin_normal"
+    android:elevation="@dimen/card_elevation"
+    card_view:cardCornerRadius="@dimen/card_conner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/comments"
+                android:textColor="@color/font_dark"
+                android:textSize="@dimen/banner_title_font_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_add_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/add_comments"
+                android:textColor="@color/background_color" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:background="@color/divider_color" />
+
+        <RelativeLayout
+            android:id="@+id/panel_comment1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal">
+
+            <ImageView
+                android:id="@+id/img_profile1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/blank_profile" />
+
+            <TextView
+                android:id="@+id/tv_comment_name1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_toEndOf="@id/img_profile1"
+                android:text="Example Name"
+                android:textColor="@color/font_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_comment1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_comment_name1"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_extra_small"
+                android:layout_toEndOf="@id/img_profile1"
+                android:text="Example comment, some description about the dish." />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:background="@color/divider_color" />
+
+        <RelativeLayout
+            android:id="@+id/panel_comment2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal">
+
+            <ImageView
+                android:id="@+id/img_profile2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/blank_profile" />
+
+            <TextView
+                android:id="@+id/tv_comment_name2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_toEndOf="@id/img_profile2"
+                android:text="Example Name"
+                android:textColor="@color/font_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_comment2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_comment_name2"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_extra_small"
+                android:layout_toEndOf="@id/img_profile2"
+                android:text="Example comment, some description about the dish." />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:background="@color/divider_color" />
+
+        <RelativeLayout
+            android:id="@+id/panel_comment3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal">
+
+            <ImageView
+                android:id="@+id/img_profile3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/blank_profile" />
+
+            <TextView
+                android:id="@+id/tv_comment_name3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_toEndOf="@id/img_profile3"
+                android:text="Example Name"
+                android:textColor="@color/font_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_comment3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_comment_name3"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_extra_small"
+                android:layout_toEndOf="@id/img_profile3"
+                android:text="Example comment, some description about the dish." />
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

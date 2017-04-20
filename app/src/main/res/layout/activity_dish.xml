@@ -14,5 +14,7 @@
         <include layout="@layout/dish_header_panel" />
 
         <include layout="@layout/dish_info_panel" />
+
+        <include layout="@layout/dish_comment_panel" />
     </LinearLayout>
 </ScrollView>

@@ -68,6 +68,9 @@
     <string name="bes_goes_with">Best goes with</string>
     <string name="dish_facts">Dish facts</string>
 
+    <string name="comments">Comments</string>
+    <string name="add_comments">add comments</string>
+
     <string name="en_us">English, US</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_menu">MenuActivity</string>
