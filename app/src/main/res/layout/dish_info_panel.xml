@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_extra_small"
+    android:layout_marginEnd="@dimen/margin_extra_small"
+    android:layout_marginStart="@dimen/margin_extra_small"
+    android:layout_marginTop="@dimen/margin_normal"
+    android:elevation="@dimen/card_elevation"
+    card_view:cardCornerRadius="@dimen/card_conner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textColor="@color/font_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Example description of the current dish." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/ingredients"
+            android:textColor="@color/font_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_ingredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Example Ingredient, Test, Test." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/allergens"
+            android:textColor="@color/font_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_allergens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Soya, Wheat, Gluten" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/bes_goes_with"
+            android:textColor="@color/font_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_best_goes_with"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample dips, sample food" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/dish_facts"
+            android:textColor="@color/font_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_dish_facts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Example story about the current dish, once upon a time. There is a dish." />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

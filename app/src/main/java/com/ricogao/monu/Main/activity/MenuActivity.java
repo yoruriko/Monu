@@ -1,5 +1,6 @@
 package com.ricogao.monu.Main.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -104,6 +105,7 @@ public class MenuActivity extends AppCompatActivity implements MenuItemAdapter.O
 
     @Override
     public void onMenuItemClick(long id) {
-
+        Intent it = new Intent(this, DishActivity.class);
+        startActivity(it);
     }
 }

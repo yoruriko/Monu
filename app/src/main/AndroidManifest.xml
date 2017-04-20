@@ -38,10 +38,15 @@
         <activity
             android:name=".Main.activity.DetailActivity"
             android:label="@string/title_activity_detail"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Main.activity.MenuActivity"
-            android:label="@string/title_activity_menu"></activity>
+            android:label="@string/title_activity_menu"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Main.activity.DishActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

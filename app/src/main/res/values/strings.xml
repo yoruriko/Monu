@@ -59,6 +59,14 @@
     <string name="drink">Drink</string>
 
     <string name="menu">Menu</string>
+    <string name="dishes">Dishes</string>
+    <string name="calories">Calories</string>
+    <string name="price">Price</string>
+    <string name="description">Description</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="allergens">Allergens</string>
+    <string name="bes_goes_with">Best goes with</string>
+    <string name="dish_facts">Dish facts</string>
 
     <string name="en_us">English, US</string>
     <string name="title_activity_detail">DetailActivity</string>
