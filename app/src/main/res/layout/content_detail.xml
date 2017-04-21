@@ -166,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_opentime2"
                 android:layout_toEndOf="@id/img_opentime"
-                android:text="@string/contact_2" />
+                android:text="@string/sat_to_sun" />
         </RelativeLayout>
 
         <View

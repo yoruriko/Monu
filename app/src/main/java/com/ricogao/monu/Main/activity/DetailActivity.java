@@ -90,7 +90,7 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         tvInfo.setText(item.getInfo());
-        btnLiked.setText(item.getLikes() + " Likes");
+        btnLiked.setText(item.getLikes() + "");
         btnLiked.setSelected(item.isLiked());
         tvLocation.setText(item.getAddress());
         tvPhone1.setText(item.getPhone1());

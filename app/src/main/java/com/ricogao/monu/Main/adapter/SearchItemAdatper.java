@@ -118,7 +118,7 @@ public class SearchItemAdatper extends RecyclerView.Adapter<RecyclerView.ViewHol
             sh.tvDistance.setText(String.format("%.1f", item.getDistance()) + " km");
             sh.tvLikes.setText(item.getLikes() + "");
             sh.tvSeats.setText(item.getSeats() + "");
-            sh.tvCost.setText("$ " + String.format("%.1f", item.getAvgCost()));
+            sh.tvCost.setText("$" + String.format("%.1f", item.getAvgCost()));
 
             Picasso.with(context)
                     .load(item.getImgSrc())

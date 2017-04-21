@@ -18,6 +18,13 @@
     <string name="nav_support_and_help">Support &amp; help</string>
 
     <string name="select_language">Select Language</string>
+    <string name="clear_img_cache_title">Are you sure to clear all image caches?</string>
+    <string name="clear_img_message">Clear image cache may cost you extra data to download the image again.</string>
+    <string name="clear_history_title">Are you sure to clear all search histories?</string>
+    <string name="clear_history_message">Clear search history is not recoverable.</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+
     <string name="push_notification">Push Notifications</string>
     <string name="new_deals_and_rewards">New Deals &amp; rewards</string>
     <string name="occasional_promos"> Occasional Promos</string>
@@ -71,7 +78,9 @@
     <string name="comments">Comments</string>
     <string name="add_comments">add comments</string>
 
+    <string name="language_title">Choose Language</string>
     <string name="en_us">English, US</string>
+    <string name="cn_zh">中文，简体</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_menu">MenuActivity</string>
 

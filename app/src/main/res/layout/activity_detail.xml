@@ -52,7 +52,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@null"
                 android:drawableStart="@drawable/like_btn_white_selector"
-                android:text="142 Likes"
+                android:text="142"
                 android:textAllCaps="false" />
 
             <android.support.v7.widget.Toolbar
