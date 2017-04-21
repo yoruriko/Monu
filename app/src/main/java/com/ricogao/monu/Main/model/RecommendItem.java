@@ -5,19 +5,28 @@ package com.ricogao.monu.Main.model;
  */
 
 public class RecommendItem {
-    long id;
-    String imgSrc;
-    boolean isTrending;
-    boolean isLiked;
-    String title;
-    String name;
-    int likes;
+    private long id;
+    private String imgSrc;
+    private boolean isTrending;
+    private boolean isLiked;
+    private String title;
+    private String name;
+    private int likes;
+    private long restaurantId;
 
     public RecommendItem() {
     }
 
     public long getId() {
         return id;
+    }
+
+    public long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(long restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
     public void setId(long id) {

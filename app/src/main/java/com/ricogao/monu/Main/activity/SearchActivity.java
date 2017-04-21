@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.ricogao.monu.Main.adapter.SearchItemAdatper;
 import com.ricogao.monu.Main.model.SearchItem;
+import com.ricogao.monu.Main.utils.DataUtil;
 import com.ricogao.monu.Main.widget.BounceBallView;
 import com.ricogao.monu.R;
 
@@ -167,20 +168,7 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
     private void showSearchResult(String key) {
 
         if (key.equals("sushi")) {
-            list = new ArrayList<>();
-            SearchItem item = new SearchItem();
-            item.setName("Yamamoto");
-            item.setKeywords("Traditional Japanese dish, Sushi");
-            item.setDistance(21);
-            item.setLikes(102);
-            item.setSeats(22);
-            item.setAvgCost(38.5f);
-            item.setId(12);
-            item.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/6b/2a/81/6b2a81e2466cca6db0d4d9ec8b328eaa.jpg");
-
-            list.add(item);
-            list.add(item);
-            list.add(item);
+            list = DataUtil.getSearchResult();
         } else {
             list = new ArrayList<>();
         }

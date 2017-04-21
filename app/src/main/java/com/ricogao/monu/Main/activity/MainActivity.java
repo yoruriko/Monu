@@ -16,9 +16,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.ricogao.monu.Main.fragments.MainFragment;
+import com.ricogao.monu.Main.model.CircleTransform;
+import com.ricogao.monu.Main.model.User;
+import com.ricogao.monu.Main.utils.DataUtil;
 import com.ricogao.monu.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -46,6 +52,10 @@ public class MainActivity extends AppCompatActivity
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    ImageView imgProfile;
+    TextView tvName;
+    TextView tvEmail;
+
     @BindString(R.string.request_scan_hint)
     String requestHint;
     @BindString(R.string.request_scan_fail_message)
@@ -64,6 +74,11 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getMenu().getItem(0).setChecked(true);
+
+        imgProfile = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.img_profile);
+        tvName = (TextView) navigationView.getHeaderView(0).findViewById(R.id.tv_name);
+        tvEmail = (TextView) navigationView.getHeaderView(0).findViewById(R.id.tv_email);
 
         init();
     }
@@ -71,6 +86,19 @@ public class MainActivity extends AppCompatActivity
     private void init() {
         mainFragment = new MainFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container, mainFragment).commit();
+
+        User user = DataUtil.getUser();
+
+        tvName.setText(user.getUserName());
+        tvEmail.setText(user.getEmail());
+
+        Picasso.with(this)
+                .load(user.getImgSrc())
+                .placeholder(R.drawable.blank_profile)
+                .fit()
+                .centerCrop()
+                .transform(new CircleTransform())
+                .into(imgProfile);
     }
 
     @Override

@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
 import com.ricogao.monu.Main.adapter.MenuItemAdapter;
+import com.ricogao.monu.Main.utils.DataUtil;
 import com.ricogao.monu.R;
 
 import java.util.ArrayList;
@@ -69,20 +70,7 @@ public class MenuActivity extends AppCompatActivity implements MenuItemAdapter.O
     private void init() {
 
         if (adapter == null) {
-            list = new ArrayList<>();
-
-            com.ricogao.monu.Main.model.MenuItem item = new com.ricogao.monu.Main.model.MenuItem();
-            item.setId(11);
-            item.setName("Inari Sushi");
-            item.setImgSrc("http://www.allaboutsushiguide.com/images/inari-sushi-1.jpg");
-            item.setVeg(true);
-
-            list.add(item);
-            list.add(item);
-            list.add(item);
-            list.add(item);
-            list.add(item);
-            list.add(item);
+            list = DataUtil.getMenu();
 
             adapter = new MenuItemAdapter(this, list);
             adapter.setListener(this);

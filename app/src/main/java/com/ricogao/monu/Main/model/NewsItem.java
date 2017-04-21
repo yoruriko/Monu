@@ -10,8 +10,17 @@ public class NewsItem {
     private String title;
     private String subTitle;
     private long id;
+    private long restaurantId;
 
     public NewsItem() {
+    }
+
+    public long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(long restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
     public String getImgSrc() {

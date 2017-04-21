@@ -5,20 +5,29 @@ package com.ricogao.monu.Main.model;
  */
 
 public class SearchItem {
-    long id;
-    String imgSrc;
-    float distance;
-    int likes;
-    int seats;
-    String name;
-    String keywords;
-    float avgCost;
+    private long id;
+    private String imgSrc;
+    private float distance;
+    private int likes;
+    private int seats;
+    private String name;
+    private String keywords;
+    private float avgCost;
+    private long restaurantId;
 
     public SearchItem() {
     }
 
     public long getId() {
         return id;
+    }
+
+    public long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(long restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
     public void setId(long id) {

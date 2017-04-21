@@ -9,6 +9,7 @@ import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.ricogao.monu.Main.adapter.DishHolderView;
 import com.ricogao.monu.Main.model.DishItem;
+import com.ricogao.monu.Main.utils.DataUtil;
 import com.ricogao.monu.R;
 
 import java.util.ArrayList;
@@ -58,27 +59,7 @@ public class DishActivity extends AppCompatActivity {
 
     private void init() {
 
-        item = new DishItem();
-
-        item.setId(123);
-        item.setName("Inari Sushi");
-        item.setCalories(102f);
-        item.setPrice(1.8f);
-
-        item.setDescription("Sweet parcels of soft beancurd filled with sticky rice.");
-        item.setIngredients("Sweet beancurd, sticky rice");
-        item.setAllergens("Gluten, Soya, Wheat");
-        item.setBestGoWith("Soy sauce, wasabi");
-        item.setDishFacts("Inari is named for the shinto (A Japanese ethnic religion) god of fertility, rice and agriculture.");
-
-        List<String> paths = new ArrayList<>();
-        ;
-        paths.add("http://www.allaboutsushiguide.com/images/inari-sushi-1.jpg");
-        paths.add("http://www.delectablebakehouse.com/wp-content/uploads/2013/09/IMG_9798.jpg");
-        paths.add("http://www.allaboutsushiguide.com/images/bigstock-Inari-Sushi-29945882-150.jpg");
-
-        item.setImgSrcs(paths);
-
+        item = DataUtil.getDish();
 
         banner.setPages(new CBViewHolderCreator() {
             @Override

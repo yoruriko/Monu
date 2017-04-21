@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ricogao.monu.Main.model.Restaurant;
+import com.ricogao.monu.Main.utils.DataUtil;
 import com.ricogao.monu.R;
 import com.squareup.picasso.Picasso;
 
@@ -82,20 +83,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void init() {
-        Restaurant item = new Restaurant();
-        item.setId(123);
-        item.setLiked(false);
-        item.setLikes(142);
-        item.setName("Yamamoto");
-        item.setInfo("Sushi bar,Ealing Broadway,London");
-        item.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/6b/2a/81/6b2a81e2466cca6db0d4d9ec8b328eaa.jpg");
-        item.setAddress("No. 109, Ealing broadway, London");
-        item.setPhone1("(+44) 5201 203 123");
-        item.setPhone2("(+44) 5201 122 959");
-        item.setWorkHour1("9 a.m. - 10 p.m.");
-        item.setWorkHour2("10 a.m. - 12 p.m.");
-        item.setDistance("18 km away");
-        item.setSeatsState(18);
+        Restaurant item = DataUtil.getRestaurant();
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(item.getName());

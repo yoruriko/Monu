@@ -1,5 +1,6 @@
 package com.ricogao.monu.Main.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -69,7 +70,8 @@ public class ScanActivity extends AppCompatActivity implements QRCodeView.Delega
     @Override
     public void onScanQRCodeSuccess(String result) {
         Log.i(TAG, "result:" + result);
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        Intent it = new Intent(this, DetailActivity.class);
+        startActivity(it);
         finish();
     }
 
