@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_extra_small"
-            android:text="sample chip"
+            android:text="sushi"
             android:textColor="@color/font_color" />
 
         <ImageButton
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_extra_small"
-            android:text="sample chip"
+            android:text="hamburger"
             android:textColor="@color/font_color" />
 
         <ImageButton
@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_extra_small"
-            android:text="sample chip"
+            android:text="steak"
             android:textColor="@color/font_color" />
 
         <ImageButton

@@ -19,6 +19,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ricogao.monu.Main.fragments.HistoryFragment;
+import com.ricogao.monu.Main.fragments.LikedFragment;
 import com.ricogao.monu.Main.fragments.MainFragment;
 import com.ricogao.monu.Main.model.CircleTransform;
 import com.ricogao.monu.Main.model.User;
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity
 
     private final static String[] perms = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
-    private Fragment mainFragment;
+    private Fragment mainFragment, likeFragment, historyFragment;
 
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
@@ -134,10 +136,19 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_recommends:
+                switchFragment(mainFragment);
                 break;
             case R.id.nav_liked:
+                if (likeFragment == null) {
+                    likeFragment = new LikedFragment();
+                }
+                switchFragment(likeFragment);
                 break;
             case R.id.nav_history:
+                if (historyFragment == null) {
+                    historyFragment = new HistoryFragment();
+                }
+                switchFragment(historyFragment);
                 break;
             case R.id.nav_settings:
                 startActivity(new Intent(this, SettingActivity.class));
@@ -193,5 +204,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    private void switchFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
     }
 }

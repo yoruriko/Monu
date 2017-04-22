@@ -1,6 +1,7 @@
 package com.ricogao.monu.Main.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -48,6 +49,8 @@ public class RecommendItemAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     public interface OnRecommendItemClickListener {
         void onItemClick(long id);
+
+        void onNewsClick(int pos);
     }
 
     public void setListener(OnRecommendItemClickListener listener) {
@@ -88,7 +91,9 @@ public class RecommendItemAdapter extends RecyclerView.Adapter<RecyclerView.View
             nh.banner.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    Toast.makeText(context, news.get(position).getId() + "", Toast.LENGTH_SHORT).show();
+                    if (listener != null) {
+                        listener.onNewsClick(position);
+                    }
                 }
             });
         }

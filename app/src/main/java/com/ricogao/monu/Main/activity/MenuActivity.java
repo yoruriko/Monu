@@ -30,6 +30,7 @@ public class MenuActivity extends AppCompatActivity implements MenuItemAdapter.O
 
     private MenuItemAdapter adapter;
 
+    private SharedPreferencesUtil spUtil;
     private List<com.ricogao.monu.Main.model.MenuItem> list;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -39,12 +40,36 @@ public class MenuActivity extends AppCompatActivity implements MenuItemAdapter.O
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_main:
+                    if (spUtil.getLanguage().equals("en")) {
+                        list = DataUtil.getMenu();
+                    } else {
+                        list = DataUtil.getCNMenu();
+                    }
+                    init();
                     return true;
                 case R.id.navigation_sides:
+                    if (spUtil.getLanguage().equals("en")) {
+                        list = DataUtil.getSides();
+                    } else {
+                        list = DataUtil.getCNSides();
+                    }
+                    init();
                     return true;
                 case R.id.navigation_dessert:
+                    if (spUtil.getLanguage().equals("en")) {
+                        list = DataUtil.getDessert();
+                    } else {
+                        list = DataUtil.getCNDessert();
+                    }
+                    init();
                     return true;
                 case R.id.navigation_drink:
+                    if (spUtil.getLanguage().equals("en")) {
+                        list = DataUtil.getDrinks();
+                    } else {
+                        list = DataUtil.getCNDrinks();
+                    }
+                    init();
                     return true;
             }
             return false;
@@ -63,14 +88,14 @@ public class MenuActivity extends AppCompatActivity implements MenuItemAdapter.O
             getSupportActionBar().setTitle(R.string.menu);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-
+        spUtil = new SharedPreferencesUtil(this);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         init();
     }
 
     private void init() {
 
-        SharedPreferencesUtil spUtil = new SharedPreferencesUtil(this);
+
         if (adapter == null) {
 
             if (spUtil.getLanguage().equals("en")) {
@@ -79,14 +104,14 @@ public class MenuActivity extends AppCompatActivity implements MenuItemAdapter.O
                 list = DataUtil.getCNMenu();
             }
 
-            adapter = new MenuItemAdapter(this, list);
-            adapter.setListener(this);
-            recycler.setLayoutManager(new GridLayoutManager(this, 2));
-            recycler.setHasFixedSize(true);
-            recycler.setAdapter(adapter);
-        } else {
-            adapter.notifyDataSetChanged();
+
         }
+
+        adapter = new MenuItemAdapter(this, list);
+        adapter.setListener(this);
+        recycler.setLayoutManager(new GridLayoutManager(this, 2));
+        recycler.setHasFixedSize(true);
+        recycler.setAdapter(adapter);
     }
 
     @Override

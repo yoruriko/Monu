@@ -135,6 +135,10 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
     }
 
     private void init() {
+
+        btnNearby.setSelected(true);
+        setFilter(TYPE_NEARBY);
+
         edtSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {

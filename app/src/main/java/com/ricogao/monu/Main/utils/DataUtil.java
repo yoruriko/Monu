@@ -427,4 +427,333 @@ public class DataUtil {
 
         return item;
     }
+
+
+    public static List<SearchItem> getLikes() {
+
+        SearchItem item = new SearchItem();
+        item.setName("Blackfriars");
+        item.setKeywords("British Cuisine, steak");
+        item.setDistance(21f);
+        item.setLikes(102);
+        item.setSeats(22);
+        item.setAvgCost(38.5f);
+        item.setId(12);
+        item.setImgSrc("http://i2.chroniclelive.co.uk/incoming/article1355894.ece/ALTERNATES/s615/blackfriars-restaurant-in-newcastle-859920512.jpg");
+
+        SearchItem item2 = new SearchItem();
+        item2.setName("Osaka");
+        item2.setKeywords("Sushi, Saki");
+        item2.setDistance(11.5f);
+        item2.setLikes(95);
+        item2.setSeats(28);
+        item2.setAvgCost(27f);
+        item2.setId(15);
+        item2.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/3e/cf/0e/3ecf0e65ecfd3143b5d02d8ba08a74a3.jpg");
+
+        SearchItem item3 = new SearchItem();
+        item3.setName("Ithaa");
+        item3.setKeywords("Underwater restaurant, experience");
+        item3.setDistance(11f);
+        item3.setLikes(142);
+        item3.setSeats(22);
+        item3.setAvgCost(32.5f);
+        item3.setId(14);
+        item3.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/53/99/de/5399de46882d395ef21b325da69e857e.jpg");
+
+        List<SearchItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+
+        return items;
+    }
+
+    public static List<SearchItem> getCNLikes() {
+
+        SearchItem item = new SearchItem();
+        item.setName("Blackfriars");
+        item.setKeywords("英式餐厅，牛排");
+        item.setDistance(21f);
+        item.setLikes(102);
+        item.setSeats(22);
+        item.setAvgCost(38.5f);
+        item.setId(12);
+        item.setImgSrc("http://i2.chroniclelive.co.uk/incoming/article1355894.ece/ALTERNATES/s615/blackfriars-restaurant-in-newcastle-859920512.jpg");
+
+        SearchItem item2 = new SearchItem();
+        item2.setName("Osaka");
+        item2.setKeywords("寿司 清酒");
+        item2.setDistance(11.5f);
+        item2.setLikes(95);
+        item2.setSeats(28);
+        item2.setAvgCost(27f);
+        item2.setId(15);
+        item2.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/3e/cf/0e/3ecf0e65ecfd3143b5d02d8ba08a74a3.jpg");
+
+        SearchItem item3 = new SearchItem();
+        item3.setName("Ithaa");
+        item3.setKeywords("水下餐厅 体验");
+        item3.setDistance(11f);
+        item3.setLikes(142);
+        item3.setSeats(22);
+        item3.setAvgCost(32.5f);
+        item3.setId(14);
+        item3.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/53/99/de/5399de46882d395ef21b325da69e857e.jpg");
+
+        List<SearchItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+
+        return items;
+    }
+
+
+    public static List<MenuItem> getSides() {
+        MenuItem item = new MenuItem();
+
+        item.setId(11);
+        item.setName("Edamame");
+        item.setImgSrc("http://cdn2.momjunction.com/wp-content/uploads/2015/09/Edamame-During-Pregnancy.jpg");
+        item.setVeg(true);
+
+        MenuItem item2 = new MenuItem();
+        item2.setId(12);
+        item2.setName("Pork Gyoza");
+        item2.setImgSrc("http://www.seriouseats.com/images/2015/03/20150309-gyoza-how-to-japanese-dumpling-recipe-open-1.jpg");
+
+        MenuItem item3 = new MenuItem();
+        item3.setId(13);
+        item3.setName("Shiyo Yakitori");
+        item3.setImgSrc("http://www.islandtrotters.com/assets/images/food/pork-belly-shio.jpg");
+
+        MenuItem item4 = new MenuItem();
+        item4.setId(14);
+        item4.setName("Takoyaki");
+        item4.setImgSrc("http://images.says.com/uploads/story/cover_image/27249/c37a.jpg");
+
+        MenuItem item5 = new MenuItem();
+        item5.setId(15);
+        item5.setName("Chawanmushi");
+        item5.setImgSrc("https://s-media-cache-ak0.pinimg.com/736x/4f/d3/24/4fd324f669437f4a0087ef54ca374e19.jpg");
+
+        MenuItem item6 = new MenuItem();
+        item6.setId(16);
+        item6.setName("Tori kara age");
+        item6.setImgSrc("https://upload.wikimedia.org/wikipedia/commons/0/0b/Tori_karaage_by_clanchou_in_Kanazawa%2C_Ishikawa.jpg");
+
+        List<MenuItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+        items.add(item5);
+        items.add(item6);
+
+        return items;
+    }
+
+    public static List<MenuItem> getCNSides() {
+        MenuItem item = new MenuItem();
+
+        item.setId(11);
+        item.setName("枝豆");
+        item.setImgSrc("http://cdn2.momjunction.com/wp-content/uploads/2015/09/Edamame-During-Pregnancy.jpg");
+        item.setVeg(true);
+
+        MenuItem item2 = new MenuItem();
+        item2.setId(12);
+        item2.setName("猪肉饺子");
+        item2.setImgSrc("http://www.seriouseats.com/images/2015/03/20150309-gyoza-how-to-japanese-dumpling-recipe-open-1.jpg");
+
+        MenuItem item3 = new MenuItem();
+        item3.setId(13);
+        item3.setName("盐烧鸡肉串");
+        item3.setImgSrc("http://www.islandtrotters.com/assets/images/food/pork-belly-shio.jpg");
+
+        MenuItem item4 = new MenuItem();
+        item4.setId(14);
+        item4.setName("章鱼小丸子");
+        item4.setImgSrc("http://images.says.com/uploads/story/cover_image/27249/c37a.jpg");
+
+        MenuItem item5 = new MenuItem();
+        item5.setId(15);
+        item5.setName("茶碗蒸");
+        item5.setImgSrc("https://s-media-cache-ak0.pinimg.com/736x/4f/d3/24/4fd324f669437f4a0087ef54ca374e19.jpg");
+
+        MenuItem item6 = new MenuItem();
+        item6.setId(16);
+        item6.setName("炸鸡块");
+        item6.setImgSrc("https://upload.wikimedia.org/wikipedia/commons/0/0b/Tori_karaage_by_clanchou_in_Kanazawa%2C_Ishikawa.jpg");
+
+        List<MenuItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+        items.add(item5);
+        items.add(item6);
+
+        return items;
+    }
+
+
+    public static List<MenuItem> getDessert() {
+        MenuItem item = new MenuItem();
+
+        item.setId(11);
+        item.setName("Apple Tempura");
+        item.setImgSrc("http://4.bp.blogspot.com/-6sN-UBZUbM4/TZMpV6dkv0I/AAAAAAAAAbM/mip8mMVwpXA/s1600/P1030809.JPG");
+        item.setVeg(true);
+
+        MenuItem item2 = new MenuItem();
+        item2.setId(12);
+        item2.setName("Fried Ice cream");
+        item2.setImgSrc("https://shewearsmanyhats.com/wp-content/uploads/2013/08/fried-ice-cream-unfried-recipe-6new.jpg");
+
+        MenuItem item3 = new MenuItem();
+        item3.setId(13);
+        item3.setName("Daifuku");
+        item3.setImgSrc("https://trendingjapan.files.wordpress.com/2016/02/ichigo_daifuku.png?w=636");
+
+        MenuItem item4 = new MenuItem();
+        item4.setId(14);
+        item4.setName("Dorayaki");
+        item4.setVeg(true);
+        item4.setImgSrc("http://1.bp.blogspot.com/-Hnn3AmPgy-U/UxHUFS3mWxI/AAAAAAAANH8/IjePVlUQiDs/s1600/Dorayaki.jpg");
+
+        MenuItem item5 = new MenuItem();
+        item5.setId(15);
+        item5.setName("Banana boat");
+        item5.setImgSrc("https://s-media-cache-ak0.pinimg.com/736x/96/ce/8b/96ce8be0c945be04f606d987746e35a8.jpg");
+
+        MenuItem item6 = new MenuItem();
+        item6.setId(16);
+        item6.setName("Mochi");
+        item6.setVeg(true);
+        item6.setImgSrc("https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Mochi_002.jpg/1200px-Mochi_002.jpg");
+
+        List<MenuItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+        items.add(item5);
+        items.add(item6);
+
+        return items;
+    }
+
+    public static List<MenuItem> getCNDessert() {
+        MenuItem item = new MenuItem();
+
+        item.setId(11);
+        item.setName("苹果天妇罗");
+        item.setImgSrc("http://4.bp.blogspot.com/-6sN-UBZUbM4/TZMpV6dkv0I/AAAAAAAAAbM/mip8mMVwpXA/s1600/P1030809.JPG");
+        item.setVeg(true);
+
+        MenuItem item2 = new MenuItem();
+        item2.setId(12);
+        item2.setName("炸雪糕");
+        item2.setImgSrc("https://shewearsmanyhats.com/wp-content/uploads/2013/08/fried-ice-cream-unfried-recipe-6new.jpg");
+
+        MenuItem item3 = new MenuItem();
+        item3.setId(13);
+        item3.setName("大福");
+        item3.setImgSrc("https://trendingjapan.files.wordpress.com/2016/02/ichigo_daifuku.png?w=636");
+
+        MenuItem item4 = new MenuItem();
+        item4.setId(14);
+        item4.setName("铜锣烧");
+        item4.setVeg(true);
+        item4.setImgSrc("http://1.bp.blogspot.com/-Hnn3AmPgy-U/UxHUFS3mWxI/AAAAAAAANH8/IjePVlUQiDs/s1600/Dorayaki.jpg");
+
+        MenuItem item5 = new MenuItem();
+        item5.setId(15);
+        item5.setName("香蕉船");
+        item5.setImgSrc("https://s-media-cache-ak0.pinimg.com/736x/96/ce/8b/96ce8be0c945be04f606d987746e35a8.jpg");
+
+        MenuItem item6 = new MenuItem();
+        item6.setId(16);
+        item6.setName("年糕");
+        item6.setVeg(true);
+        item6.setImgSrc("https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Mochi_002.jpg/1200px-Mochi_002.jpg");
+
+        List<MenuItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+        items.add(item5);
+        items.add(item6);
+
+        return items;
+    }
+
+    public static List<MenuItem> getDrinks() {
+        MenuItem item = new MenuItem();
+
+        item.setId(11);
+        item.setName("Gekkeikan");
+        item.setImgSrc("https://www.japaneseflavours.com/28-tm_thickbox_default/gekkeikan-sake-750ml.jpg");
+
+        MenuItem item2 = new MenuItem();
+        item2.setId(12);
+        item2.setName("Hakushika Ginjou");
+        item2.setImgSrc("http://s7d9.scene7.com/is/image/SAQ/11156570_is?$saq-prod-tra$");
+
+        MenuItem item3 = new MenuItem();
+        item3.setId(13);
+        item3.setName("Merlot");
+        item3.setImgSrc("http://www.redwoodcreek.com/resources/images/wines/red/detail/merlot.png");
+
+        MenuItem item4 = new MenuItem();
+        item4.setId(14);
+        item4.setName("Asahi");
+        item4.setImgSrc("https://www.europafoodxb.com/static/images/productimage-picture-asahi-4941.jpg");
+
+
+
+        List<MenuItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+
+        return items;
+    }
+
+    public static List<MenuItem> getCNDrinks() {
+        MenuItem item = new MenuItem();
+
+        item.setId(11);
+        item.setName("桂月冠");
+        item.setImgSrc("https://www.japaneseflavours.com/28-tm_thickbox_default/gekkeikan-sake-750ml.jpg");
+
+        MenuItem item2 = new MenuItem();
+        item2.setId(12);
+        item2.setName("白鹿吟酿");
+        item2.setImgSrc("http://s7d9.scene7.com/is/image/SAQ/11156570_is?$saq-prod-tra$");
+
+        MenuItem item3 = new MenuItem();
+        item3.setId(13);
+        item3.setName("梅洛特");
+        item3.setImgSrc("http://www.redwoodcreek.com/resources/images/wines/red/detail/merlot.png");
+
+        MenuItem item4 = new MenuItem();
+        item4.setId(14);
+        item4.setName("朝日啤酒");
+        item4.setImgSrc("https://www.europafoodxb.com/static/images/productimage-picture-asahi-4941.jpg");
+
+
+
+        List<MenuItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+
+        return items;
+    }
 }
