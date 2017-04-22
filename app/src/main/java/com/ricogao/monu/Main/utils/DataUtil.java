@@ -1,5 +1,6 @@
 package com.ricogao.monu.Main.utils;
 
+import com.ricogao.monu.Main.model.Comment;
 import com.ricogao.monu.Main.model.DishItem;
 import com.ricogao.monu.Main.model.MenuItem;
 import com.ricogao.monu.Main.model.NewsItem;
@@ -714,7 +715,6 @@ public class DataUtil {
         item4.setImgSrc("https://www.europafoodxb.com/static/images/productimage-picture-asahi-4941.jpg");
 
 
-
         List<MenuItem> items = new ArrayList<>();
         items.add(item);
         items.add(item2);
@@ -747,7 +747,6 @@ public class DataUtil {
         item4.setImgSrc("https://www.europafoodxb.com/static/images/productimage-picture-asahi-4941.jpg");
 
 
-
         List<MenuItem> items = new ArrayList<>();
         items.add(item);
         items.add(item2);
@@ -755,5 +754,55 @@ public class DataUtil {
         items.add(item4);
 
         return items;
+    }
+
+    public static List<Comment> getComments() {
+        List<Comment> list = new ArrayList<>();
+
+        Comment comment = new Comment();
+        comment.setName("JaneWaston");
+        comment.setComment("Very tasty, beancurd goes very well with the sticky rice");
+        comment.setImgSrc("http://socialventurepartners.s3-us-west-2.amazonaws.com/www.socialventurepartners.org/sites/43/2013/08/Jane-Ragle.jpg");
+
+        Comment comment1 = new Comment();
+        comment1.setName("BenWake");
+        comment1.setComment("Nice dish, the story behind the dish is also very interesting.");
+        comment1.setImgSrc("https://pbs.twimg.com/profile_images/595898348311334913/g1aiOY-E.jpg");
+
+        Comment comment2 = new Comment();
+        comment2.setName("JameGreen");
+        comment2.setComment("This dish taste as lovely as it looks.");
+        comment2.setImgSrc("http://www.magnetic.com/wp-content/uploads/JamesGreen.jpg");
+
+        list.add(comment);
+        list.add(comment1);
+        list.add(comment2);
+
+        return list;
+    }
+
+    public static List<Comment> getCNComments() {
+        List<Comment> list = new ArrayList<>();
+
+        Comment comment = new Comment();
+        comment.setName("JaneWaston");
+        comment.setComment("非常美味，豆腐皮和寿司米是很好的搭配。");
+        comment.setImgSrc("http://socialventurepartners.s3-us-west-2.amazonaws.com/www.socialventurepartners.org/sites/43/2013/08/Jane-Ragle.jpg");
+
+        Comment comment1 = new Comment();
+        comment1.setName("BenWake");
+        comment1.setComment("味道很好，这个菜品背后的故事页很吸引人。");
+        comment1.setImgSrc("https://pbs.twimg.com/profile_images/595898348311334913/g1aiOY-E.jpg");
+
+        Comment comment2 = new Comment();
+        comment2.setName("JameGreen");
+        comment2.setComment("这道菜品就好像它看上去那么美味。");
+        comment2.setImgSrc("http://www.magnetic.com/wp-content/uploads/JamesGreen.jpg");
+
+        list.add(comment);
+        list.add(comment1);
+        list.add(comment2);
+
+        return list;
     }
 }
