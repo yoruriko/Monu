@@ -10,6 +10,7 @@ import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.ricogao.monu.Main.adapter.DishHolderView;
 import com.ricogao.monu.Main.model.DishItem;
 import com.ricogao.monu.Main.utils.DataUtil;
+import com.ricogao.monu.Main.utils.SharedPreferencesUtil;
 import com.ricogao.monu.R;
 
 import java.util.ArrayList;
@@ -59,7 +60,12 @@ public class DishActivity extends AppCompatActivity {
 
     private void init() {
 
-        item = DataUtil.getDish();
+        SharedPreferencesUtil spUtil = new SharedPreferencesUtil(this);
+        if (spUtil.getLanguage().equals("en")) {
+            item = DataUtil.getDish();
+        } else {
+            item = DataUtil.getCNDish();
+        }
 
         banner.setPages(new CBViewHolderCreator() {
             @Override

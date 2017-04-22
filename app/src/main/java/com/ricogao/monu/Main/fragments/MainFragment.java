@@ -14,6 +14,7 @@ import com.ricogao.monu.Main.adapter.RecommendItemAdapter;
 import com.ricogao.monu.Main.model.NewsItem;
 import com.ricogao.monu.Main.model.RecommendItem;
 import com.ricogao.monu.Main.utils.DataUtil;
+import com.ricogao.monu.Main.utils.SharedPreferencesUtil;
 import com.ricogao.monu.R;
 
 import java.util.ArrayList;
@@ -54,9 +55,15 @@ public class MainFragment extends Fragment implements RecommendItemAdapter.OnRec
 
 
     private void initRecyclerView() {
-        list = DataUtil.getRecommends();
+        SharedPreferencesUtil spUtil = new SharedPreferencesUtil(this.getContext());
 
-        items = DataUtil.getNews();
+        if (spUtil.getLanguage().equals("en")) {
+            items = DataUtil.getNews();
+            list = DataUtil.getRecommends();
+        } else {
+            items = DataUtil.getCNNews();
+            list = DataUtil.getCNRecommends();
+        }
 
         if (adapter == null) {
             adapter = new RecommendItemAdapter(this.getContext(), list, items);

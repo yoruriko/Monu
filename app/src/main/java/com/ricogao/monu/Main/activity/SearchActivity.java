@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.ricogao.monu.Main.adapter.SearchItemAdatper;
 import com.ricogao.monu.Main.model.SearchItem;
 import com.ricogao.monu.Main.utils.DataUtil;
+import com.ricogao.monu.Main.utils.SharedPreferencesUtil;
 import com.ricogao.monu.Main.widget.BounceBallView;
 import com.ricogao.monu.R;
 
@@ -167,8 +168,15 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
 
     private void showSearchResult(String key) {
 
-        if (key.equals("sushi")) {
-            list = DataUtil.getSearchResult();
+        SharedPreferencesUtil spUtil = new SharedPreferencesUtil(this);
+
+        if (key.equals("sushi") || key.equals("寿司")) {
+            if (spUtil.getLanguage().equals("en")) {
+                list = DataUtil.getSearchResult();
+            } else {
+                list = DataUtil.getCNSearchResult();
+            }
+
         } else {
             list = new ArrayList<>();
         }

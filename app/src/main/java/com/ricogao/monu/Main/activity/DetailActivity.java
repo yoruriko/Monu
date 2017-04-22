@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.ricogao.monu.Main.model.Restaurant;
 import com.ricogao.monu.Main.utils.DataUtil;
+import com.ricogao.monu.Main.utils.SharedPreferencesUtil;
 import com.ricogao.monu.R;
 import com.squareup.picasso.Picasso;
 
@@ -83,7 +84,15 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void init() {
-        Restaurant item = DataUtil.getRestaurant();
+        Restaurant item;
+
+        SharedPreferencesUtil spUtil = new SharedPreferencesUtil(this);
+        if (spUtil.getLanguage().equals("en")) {
+            item = DataUtil.getRestaurant();
+        } else {
+            item = DataUtil.getCNRestaurant();
+        }
+
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(item.getName());

@@ -61,7 +61,7 @@
     <string name="mon_to_fri">周一 - 周五</string>
     <string name="sat_to_sun">周六 - 周日</string>
     <string name="booking_condition">预定情况</string>
-    <string name="seats_available">座位情况</string>
+    <string name="seats_available">座位空闲</string>
 
     <string name="main">主菜</string>
     <string name="sides">小食</string>

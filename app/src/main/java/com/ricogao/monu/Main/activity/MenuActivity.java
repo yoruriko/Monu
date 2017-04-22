@@ -11,6 +11,7 @@ import android.view.MenuItem;
 
 import com.ricogao.monu.Main.adapter.MenuItemAdapter;
 import com.ricogao.monu.Main.utils.DataUtil;
+import com.ricogao.monu.Main.utils.SharedPreferencesUtil;
 import com.ricogao.monu.R;
 
 import java.util.ArrayList;
@@ -69,8 +70,14 @@ public class MenuActivity extends AppCompatActivity implements MenuItemAdapter.O
 
     private void init() {
 
+        SharedPreferencesUtil spUtil = new SharedPreferencesUtil(this);
         if (adapter == null) {
-            list = DataUtil.getMenu();
+
+            if (spUtil.getLanguage().equals("en")) {
+                list = DataUtil.getMenu();
+            } else {
+                list = DataUtil.getCNMenu();
+            }
 
             adapter = new MenuItemAdapter(this, list);
             adapter.setListener(this);

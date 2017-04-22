@@ -17,7 +17,7 @@ import java.util.List;
 
 public class DataUtil {
 
-    public static User getUser(){
+    public static User getUser() {
         User user = new User();
 
         user.setId(12);
@@ -64,6 +64,42 @@ public class DataUtil {
         return items;
     }
 
+    public static List<NewsItem> getCNNews() {
+
+
+        NewsItem news1 = new NewsItem();
+        news1.setId(1);
+        news1.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/cf/d1/d3/cfd1d353b6a196dfd7843787e212faa4.jpg");
+        news1.setTitle("被访问最多的花园餐厅");
+        news1.setSubTitle("最新排名 2016-2017");
+
+        NewsItem news2 = new NewsItem();
+        news2.setId(2);
+        news2.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/c0/2e/ac/c02eac7cb5fe6082e1c091916832c660.jpg");
+        news2.setTitle("神奇的水下餐厅");
+        news2.setSubTitle("你从未有过的用餐经验");
+
+        NewsItem news3 = new NewsItem();
+        news3.setId(3);
+        news3.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/6b/2a/81/6b2a81e2466cca6db0d4d9ec8b328eaa.jpg");
+        news3.setTitle("欧洲最好的寿司店");
+        news3.setSubTitle("为寿司爱好者所推荐");
+
+        NewsItem news4 = new NewsItem();
+        news4.setId(4);
+        news4.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/c1/26/4c/c1264c813c3c92336876bff7f806aa5c.jpg");
+        news4.setTitle("让我们来电音乐");
+        news4.setSubTitle("爵士乐和美味的食物");
+
+        List<NewsItem> items = new ArrayList<>();
+        items.add(news1);
+        items.add(news2);
+        items.add(news3);
+        items.add(news4);
+
+        return items;
+    }
+
     public static List<RecommendItem> getRecommends() {
 
         RecommendItem item1 = new RecommendItem();
@@ -90,6 +126,44 @@ public class DataUtil {
         item3.setLiked(false);
         item3.setTitle("Lovely cafe");
         item3.setName("Ben lovevolley cafe");
+        item3.setLikes(169);
+        item3.setTrending(false);
+        item3.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/91/d8/e6/91d8e6ecc497f9c12ff0af035b74803d.jpg");
+
+        List<RecommendItem> items = new ArrayList<>();
+        items.add(item1);
+        items.add(item2);
+        items.add(item3);
+
+        return items;
+    }
+
+    public static List<RecommendItem> getCNRecommends() {
+
+        RecommendItem item1 = new RecommendItem();
+        item1.setId(1);
+        item1.setLiked(false);
+        item1.setTitle("带我去我味去过的地方");
+        item1.setName("Ithaa, 水下餐厅");
+        item1.setLikes(240);
+        item1.setTrending(true);
+        item1.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/53/99/de/5399de46882d395ef21b325da69e857e.jpg");
+
+
+        RecommendItem item2 = new RecommendItem();
+        item2.setId(2);
+        item2.setLiked(true);
+        item2.setTitle("讨人喜爱的花园餐厅");
+        item2.setName("Welly garden, 花园餐厅");
+        item2.setLikes(169);
+        item2.setTrending(false);
+        item2.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/40/0f/44/400f442132d350f77be0853af7418e53.jpg");
+
+        RecommendItem item3 = new RecommendItem();
+        item3.setId(3);
+        item3.setLiked(false);
+        item3.setTitle("精致的咖啡馆");
+        item3.setName("Ben lovevolley cafe, 咖啡馆");
         item3.setLikes(169);
         item3.setTrending(false);
         item3.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/91/d8/e6/91d8e6ecc497f9c12ff0af035b74803d.jpg");
@@ -142,6 +216,46 @@ public class DataUtil {
         return items;
     }
 
+    public static List<SearchItem> getCNSearchResult() {
+
+        SearchItem item = new SearchItem();
+        item.setName("Yamamoto");
+        item.setKeywords("传统日式料理, 寿司");
+        item.setDistance(21f);
+        item.setLikes(102);
+        item.setSeats(22);
+        item.setAvgCost(38.5f);
+        item.setId(12);
+        item.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/6b/2a/81/6b2a81e2466cca6db0d4d9ec8b328eaa.jpg");
+
+        SearchItem item2 = new SearchItem();
+        item2.setName("Osaka");
+        item2.setKeywords("寿司，日本酒");
+        item2.setDistance(11.5f);
+        item2.setLikes(95);
+        item2.setSeats(28);
+        item2.setAvgCost(27f);
+        item2.setId(15);
+        item2.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/3e/cf/0e/3ecf0e65ecfd3143b5d02d8ba08a74a3.jpg");
+
+        SearchItem item3 = new SearchItem();
+        item3.setName("Yashi 寿司餐厅");
+        item3.setKeywords("传统日式料理, 寿司");
+        item3.setDistance(11f);
+        item3.setLikes(142);
+        item3.setSeats(22);
+        item3.setAvgCost(32.5f);
+        item3.setId(14);
+        item3.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/6a/34/eb/6a34ebcfef799bd6cf666139875b797c.jpg");
+
+        List<SearchItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+
+        return items;
+    }
+
     public static Restaurant getRestaurant() {
         Restaurant item = new Restaurant();
         item.setId(123);
@@ -156,6 +270,24 @@ public class DataUtil {
         item.setWorkHour1("9 a.m. - 10 p.m.");
         item.setWorkHour2("10 a.m. - 12 p.m.");
         item.setDistance("18 km away");
+        item.setSeatsState(18);
+        return item;
+    }
+
+    public static Restaurant getCNRestaurant() {
+        Restaurant item = new Restaurant();
+        item.setId(123);
+        item.setLiked(false);
+        item.setLikes(142);
+        item.setName("Yamamoto");
+        item.setInfo("寿司餐厅,Ealing boradway,伦敦");
+        item.setImgSrc("https://s-media-cache-ak0.pinimg.com/564x/6b/2a/81/6b2a81e2466cca6db0d4d9ec8b328eaa.jpg");
+        item.setAddress("109号, Ealing broadway, 伦敦");
+        item.setPhone1("(+44) 5201 203 123");
+        item.setPhone2("(+44) 5201 122 959");
+        item.setWorkHour1("9 a.m. - 10 p.m.");
+        item.setWorkHour2("10 a.m. - 12 p.m.");
+        item.setDistance("18 km 之外");
         item.setSeatsState(18);
         return item;
     }
@@ -204,8 +336,52 @@ public class DataUtil {
         return items;
     }
 
+    public static List<MenuItem> getCNMenu() {
+        MenuItem item = new MenuItem();
 
-    public static DishItem getDish(){
+        item.setId(11);
+        item.setName("豆腐皮寿司");
+        item.setImgSrc("http://www.allaboutsushiguide.com/images/inari-sushi-1.jpg");
+        item.setVeg(true);
+
+        MenuItem item2 = new MenuItem();
+        item2.setId(12);
+        item2.setName("章鱼寿司");
+        item2.setImgSrc("http://www.wazen.com.my/images/menu-choice/big/nigiri/3.jpg");
+
+        MenuItem item3 = new MenuItem();
+        item3.setId(13);
+        item3.setName("玉子寿司");
+        item3.setImgSrc("http://www.cooksinfo.com/edible.nsf/images/tamago-nigiri-sushi/$file/tamago-nigiri-sushi.jpg");
+
+        MenuItem item4 = new MenuItem();
+        item4.setId(14);
+        item4.setName("三文鱼寿司");
+        item4.setImgSrc("https://therawexplorerdotcom.files.wordpress.com/2013/11/bioweb.jpg");
+
+        MenuItem item5 = new MenuItem();
+        item5.setId(15);
+        item5.setName("甜虾寿司");
+        item5.setImgSrc("http://www.delisushi.com/87/ebi-sushi.jpg");
+
+        MenuItem item6 = new MenuItem();
+        item6.setId(16);
+        item6.setName("天妇罗寿司");
+        item6.setImgSrc("https://i.ytimg.com/vi/1QvnvdEOzSM/maxresdefault.jpg");
+
+        List<MenuItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+        items.add(item5);
+        items.add(item6);
+
+        return items;
+    }
+
+
+    public static DishItem getDish() {
         DishItem item = new DishItem();
         item.setId(123);
         item.setName("Inari Sushi");
@@ -217,6 +393,30 @@ public class DataUtil {
         item.setAllergens("Gluten, Soya, Wheat");
         item.setBestGoWith("Soy sauce, wasabi");
         item.setDishFacts("Inari is named for the shinto (A Japanese ethnic religion) god of fertility, rice and agriculture.");
+
+        List<String> paths = new ArrayList<>();
+        paths.add("http://www.allaboutsushiguide.com/images/inari-sushi-1.jpg");
+        paths.add("http://www.delectablebakehouse.com/wp-content/uploads/2013/09/IMG_9798.jpg");
+        paths.add("http://www.allaboutsushiguide.com/images/bigstock-Inari-Sushi-29945882-150.jpg");
+
+        item.setImgSrcs(paths);
+
+        return item;
+    }
+
+
+    public static DishItem getCNDish() {
+        DishItem item = new DishItem();
+        item.setId(123);
+        item.setName("豆腐皮寿司");
+        item.setCalories(102f);
+        item.setPrice(1.8f);
+
+        item.setDescription("甜味豆腐皮中塞入腌渍过的寿司米");
+        item.setIngredients("甜豆腐皮，寿司米");
+        item.setAllergens("面筋, 大豆, 小麦");
+        item.setBestGoWith("酱油，芥末");
+        item.setDishFacts("Inari（豆腐皮）是日本传统神话中的生育，大米和农业之神。");
 
         List<String> paths = new ArrayList<>();
         paths.add("http://www.allaboutsushiguide.com/images/inari-sushi-1.jpg");
