@@ -40,6 +40,7 @@
     <string name="request_scan_hint">扫描二维码需要照相机权限</string>
     <string name="request_scan_fail_message">无法在没有权限的情况下打开相机</string>
     <string name="request">请求</string>
+    <string name="scan_fail_message">抱歉，所扫描的二维码不符合标准。</string>
 
     <string name="search_hint">你想搜些什么？</string>
     <string name="recent">搜过:</string>

@@ -70,9 +70,14 @@ public class ScanActivity extends AppCompatActivity implements QRCodeView.Delega
     @Override
     public void onScanQRCodeSuccess(String result) {
         Log.i(TAG, "result:" + result);
-        Intent it = new Intent(this, DetailActivity.class);
-        startActivity(it);
-        finish();
+        if(result.equals("www.monu.com/id/123")){
+            Intent it = new Intent(this, DetailActivity.class);
+            startActivity(it);
+            finish();
+        }else{
+            Toast.makeText(this, R.string.scan_fail_message, Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override

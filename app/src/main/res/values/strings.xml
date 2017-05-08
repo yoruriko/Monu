@@ -24,6 +24,7 @@
     <string name="clear_history_message">Clear search history is not recoverable.</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
+    <string name="scan_fail_message">Sorry the QR code is invalid.</string>
 
     <string name="push_notification">Push Notifications</string>
     <string name="new_deals_and_rewards">New Deals &amp; rewards</string>
