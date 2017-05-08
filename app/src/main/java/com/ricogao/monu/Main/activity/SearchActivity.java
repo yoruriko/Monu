@@ -17,6 +17,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.ricogao.monu.Main.adapter.SearchItemAdatper;
@@ -46,6 +47,8 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
     private final int TYPE_NEARBY = 1;
     private final int TYPE_AUTHENTIC = 2;
     private final int TYPE_TRENDING = 3;
+
+    private List<String> searchHistory;
 
     private SearchItemAdatper adatper;
     private List<SearchItem> list;
@@ -85,6 +88,57 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
     RecyclerView recyclerView;
 
 
+    @BindView(R.id.chip_1)
+    View chip1;
+    @BindView(R.id.chip_2)
+    View chip2;
+    @BindView(R.id.chip_3)
+    View chip3;
+    @BindView(R.id.tv_chip_1)
+    TextView tvChip1;
+    @BindView(R.id.tv_chip_2)
+    TextView tvChip2;
+    @BindView(R.id.tv_chip_3)
+    TextView tvChip3;
+
+
+    @OnClick(R.id.btn_chip_1)
+    void onChip1Cancel() {
+        searchHistory.remove(tvChip1.getText().toString());
+        updateChips();
+    }
+
+    @OnClick(R.id.btn_chip_2)
+    void onChip2Cancel() {
+        searchHistory.remove(tvChip2.getText().toString());
+        updateChips();
+    }
+
+    @OnClick(R.id.btn_chip_3)
+    void onChip3Cancel() {
+        searchHistory.remove(tvChip3.getText().toString());
+        updateChips();
+    }
+
+    @OnClick(R.id.chip_1)
+    void onChip1Click() {
+        edtSearch.setText(tvChip1.getText());
+        performSearch(tvChip1.getText().toString());
+    }
+
+    @OnClick(R.id.chip_2)
+    void onChip2Click() {
+        edtSearch.setText(tvChip2.getText());
+        performSearch(tvChip1.getText().toString());
+    }
+
+    @OnClick(R.id.chip_3)
+    void onChip3Click() {
+        edtSearch.setText(tvChip3.getText());
+        performSearch(tvChip1.getText().toString());
+    }
+
+
     @OnClick({R.id.btn_nearby, R.id.btn_authentic, R.id.btn_trending})
     void onFilterClick(LinearLayout item) {
 
@@ -117,7 +171,6 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
     @OnClick(R.id.edt_search)
     void onEdtClick() {
         showPanel();
-        loadRecent();
     }
 
 
@@ -127,6 +180,12 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+
+        searchHistory = new ArrayList<>();
+        searchHistory.add("sushi");
+        searchHistory.add("hamburger");
+        searchHistory.add("steak");
+
         init();
 
         if (getSupportActionBar() != null) {
@@ -136,6 +195,7 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
 
     private void init() {
 
+        updateChips();
         btnNearby.setSelected(true);
         setFilter(TYPE_NEARBY);
 
@@ -152,8 +212,37 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
         });
     }
 
+    private void updateChips() {
+        if (searchHistory.size() >= 3) {
+            tvChip3.setText(searchHistory.get(2));
+            chip3.setVisibility(View.VISIBLE);
+        } else {
+            chip3.setVisibility(View.GONE);
+        }
+
+        if (searchHistory.size() >= 2) {
+            tvChip2.setText(searchHistory.get(1));
+            chip2.setVisibility(View.VISIBLE);
+        } else {
+            chip2.setVisibility(View.GONE);
+        }
+
+        if (searchHistory.size() >= 1) {
+            tvChip1.setText(searchHistory.get(0));
+            chip1.setVisibility(View.VISIBLE);
+        } else {
+            chip1.setVisibility(View.GONE);
+        }
+    }
+
     private void performSearch(String key) {
         startLoadingAnim();
+
+        if (!searchHistory.contains(key)) {
+            searchHistory.add(0, key);
+        }
+
+        updateChips();
 
         mHandler.sendMessageDelayed(mHandler.obtainMessage(SEARCH_FINISH, key), 3000);
         hideKeyboard();
@@ -219,13 +308,16 @@ public class SearchActivity extends AppCompatActivity implements SearchItemAdatp
         }
     }
 
-    private void loadRecent() {
-        // TODO: 2017/4/16
-    }
 
     private void setFilter(int type) {
-
-        //// TODO: 2017/4/16
+        switch (type) {
+            case TYPE_NEARBY:
+                break;
+            case TYPE_TRENDING:
+                break;
+            case TYPE_AUTHENTIC:
+                break;
+        }
     }
 
     private void hidePanel() {
